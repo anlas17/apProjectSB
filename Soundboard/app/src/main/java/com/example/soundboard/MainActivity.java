@@ -1,15 +1,10 @@
 package com.example.soundboard;
 
-import android.arch.lifecycle.LiveData;
 import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
 
-
-import java.util.List;
-import java.util.Observer;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,16 +20,24 @@ public class MainActivity extends AppCompatActivity {
     final TextView mp5Text = findViewById(R.id.textView4);
     final TextView sweepText = findViewById(R.id.textView3);
     */
-    int sweepAmount, fartAmount, mp5Amount, bowAmount;
-    Sound bowS = new Sound();
-    Sound fartS = new Sound();
-    Sound mp5S = new Sound();
-    Sound sweepS = new Sound();
+
+    Integer bowAmount = new Integer(0);
+    Integer sweepAmount = new Integer(0);
+    Integer fartAmount = new Integer(0);
+    Integer mp5Amount = new Integer(0);
+
+    Sound fartS = new Sound("fart", 0);
+    Sound mp5S = new Sound("mp5", 0);
+    Sound sweepS = new Sound("sweep", 0);
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        SoundRepository sdb = new SoundRepository(getApplicationContext());
 
         //creating sounds from files
         bow = MediaPlayer.create(this, R.raw.bow);
@@ -43,25 +46,7 @@ public class MainActivity extends AppCompatActivity {
         sweep = MediaPlayer.create(this, R.raw.sweep);
 
 
-        SoundRepository sdb = new SoundRepository(getApplicationContext());
-
-        bowS = sdb.getSound("bow");
-        fartS = sdb.getSound("fart");
-        mp5S = sdb.getSound("mp5");
-        sweepS = sdb.getSound("sweep");
-
-        if(bowS != null){
-            bowAmount = bowS.getAmount();
-        }
-        if(fartS != null){
-            fartAmount = fartS.getAmount();
-        }
-        if(mp5S != null){
-            mp5Amount = mp5S.getAmount();
-        }
-        if(sweepS != null){
-            sweepAmount = sweepS.getAmount();
-        }
+        //set text to 0 placeholder
         /*
         bowText.setText(bowAmount);
         fartText.setText(fartAmount);
@@ -73,18 +58,71 @@ public class MainActivity extends AppCompatActivity {
 
     //start sound with button
     public void bow(View view){
+        SoundRepository sdb = new SoundRepository(getApplicationContext());
         bow.start();
+        Sound bowS = new Sound("bow",0);
+
+        try {
+            bowS = sdb.getSound("bow");
+            bowAmount = bowS.getAmount() + 1;
+            //set text bowamount
+            bowS.setAmount(bowAmount);
+            sdb.updateSound(bowS.getName(), bowS.getAmount());
+        }catch(Exception e){
+            //set text bowamount to 0
+            sdb.insertSound("bow",0);
+        }
+
     }
     //start sound with button
     public void fart(View view){
+        SoundRepository sdb = new SoundRepository(getApplicationContext());
         fart.start();
+        Sound fartS = new Sound("fart",0);
+
+        try {
+            fartS = sdb.getSound("fart");
+            fartAmount = fartS.getAmount() + 1;
+            //set text bowamount
+            fartS.setAmount(fartAmount);
+            sdb.updateSound(fartS.getName(), fartS.getAmount());
+        }catch(Exception e){
+            //set text fartamount to 0
+            sdb.insertSound("fart",0);
+        }
     }
     //start sound with button
     public void mp5(View view){
+        SoundRepository sdb = new SoundRepository(getApplicationContext());
         mp5.start();
+        Sound mp5S = new Sound("mp5",0);
+
+        try {
+            mp5S = sdb.getSound("mp5");
+            mp5Amount = mp5S.getAmount() + 1;
+            //set text mp5amount
+            mp5S.setAmount(mp5Amount);
+            sdb.updateSound(mp5S.getName(), mp5S.getAmount());
+        }catch(Exception e){
+            //set text mp5amount to 0
+            sdb.insertSound("mp5",0);
+        }
     }
     //start sound with button
     public void sweep(View view){
+        SoundRepository sdb = new SoundRepository(getApplicationContext());
         sweep.start();
+        Sound sweepS = new Sound("sweep",0);
+
+        try {
+            sweepS = sdb.getSound("sweep");
+            sweepAmount = sweepS.getAmount() + 1;
+            //set text sweepamount
+            sweepS.setAmount(sweepAmount);
+            sdb.updateSound(sweepS.getName(), sweepS.getAmount());
+        }catch(Exception e){
+            //set text sweepamount to 0
+            sdb.insertSound("sweep",0);
+        }
     }
 }

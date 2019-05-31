@@ -14,20 +14,20 @@ public class SoundRepository {
             sInstance = Room.databaseBuilder(context, SoundDatabase.class, DB_NAME).allowMainThreadQueries().build();
     }
 
-    public void insertSound(String name, int amount){
-        Sound sound = new Sound();
+    public void insertSound(String name, Integer amount){
+        Sound sound = new Sound("",0);
         sound.setName(name);
         sound.setAmount(amount);
         sInstance.soundDao().insertSound(sound);
     }
-    public void updateSound(String name, int amount){
-        Sound sound = new Sound();
+    public void updateSound(String name, Integer amount){
+        Sound sound = new Sound("", 0);
         sound.setName(name);
         sound.setAmount(amount);
         sInstance.soundDao().updateSound(sound);
     }
     public void deleteSound(String name){
-        Sound sound = new Sound();
+        Sound sound = new Sound("", 0);
         sound.setName(name);
         sound.setAmount(0);
         sInstance.soundDao().deleteSound(sound);

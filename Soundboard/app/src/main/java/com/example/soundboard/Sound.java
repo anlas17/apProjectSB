@@ -12,10 +12,11 @@ public class Sound {
     @NonNull
     private String name;
     @ColumnInfo(name = "amount")
-    private int amount;
+    private Integer amount;
 
-    public Sound(){
-
+    public Sound(String name, Integer amount){
+    this.name = name;
+    this.amount = amount;
     }
     public String getName(){
         return name;
@@ -23,10 +24,10 @@ public class Sound {
     public void setName(String name){
         this.name = name;
     }
-    public int getAmount(){
+    public Integer getAmount(){
         return amount;
     }
-    public void setAmount(int amount){
+    public void setAmount(Integer amount){
         this.amount = amount;
     }
 }
