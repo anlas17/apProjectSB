@@ -1,5 +1,6 @@
 package com.example.soundboard;
 
+import android.arch.lifecycle.LiveData;
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
@@ -10,7 +11,7 @@ import java.util.List;
 
 @Dao
 public interface SoundDao {
-    @Query("Select * from sound")
+    @Query("SELECT * FROM SOUND")
     List<Sound> getSoundList();
     @Insert
     void insertSound(Sound sound);

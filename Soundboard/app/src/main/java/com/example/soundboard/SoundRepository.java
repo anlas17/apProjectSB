@@ -1,5 +1,6 @@
 package com.example.soundboard;
 
+import android.arch.lifecycle.LiveData;
 import android.arch.persistence.room.Room;
 import android.content.Context;
 
@@ -10,7 +11,7 @@ public class SoundRepository {
     private SoundDatabase sInstance;
 
     public SoundRepository(Context context){
-            sInstance = Room.databaseBuilder(context, SoundDatabase.class, DB_NAME).build();
+            sInstance = Room.databaseBuilder(context, SoundDatabase.class, DB_NAME).allowMainThreadQueries().build();
     }
 
     public void insertSound(String name, int amount){

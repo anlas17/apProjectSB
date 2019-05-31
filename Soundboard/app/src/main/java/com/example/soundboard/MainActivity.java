@@ -1,12 +1,13 @@
 package com.example.soundboard;
 
+import android.arch.lifecycle.LiveData;
 import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import java.util.Iterator;
+
 import java.util.List;
 import java.util.Observer;
 
@@ -17,13 +18,18 @@ public class MainActivity extends AppCompatActivity {
     MediaPlayer fart;
     MediaPlayer mp5;
     MediaPlayer sweep;
-
-    final TextView bowText = (TextView) findViewById(R.id.textView);
-    final TextView fartText = (TextView) findViewById(R.id.textView2);
-    final TextView mp5Text = (TextView) findViewById(R.id.textView4);
-    final TextView sweepText = (TextView) findViewById(R.id.textView3);
-
+    //crasher appen
+    /*
+    final TextView bowText = findViewById(R.id.textView);
+    final TextView fartText = findViewById(R.id.textView2);
+    final TextView mp5Text = findViewById(R.id.textView4);
+    final TextView sweepText = findViewById(R.id.textView3);
+    */
     int sweepAmount, fartAmount, mp5Amount, bowAmount;
+    Sound bowS = new Sound();
+    Sound fartS = new Sound();
+    Sound mp5S = new Sound();
+    Sound sweepS = new Sound();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,28 +44,30 @@ public class MainActivity extends AppCompatActivity {
 
 
         SoundRepository sdb = new SoundRepository(getApplicationContext());
-        List<Sound> soundlist = sdb.getSounds();
 
-        for(int i=0;i<soundlist.size();i++){
-            if(soundlist.get(i).getName() == "bow"){
-                bowAmount = soundlist.get(i).getAmount();
-            }
-            if(soundlist.get(i).getName() == "fart"){
-                fartAmount = soundlist.get(i).getAmount();
-            }
-            if(soundlist.get(i).getName() == "mp5"){
-                mp5Amount = soundlist.get(i).getAmount();
-            }
-            if(soundlist.get(i).getName() == "sweep"){
-                sweepAmount = soundlist.get(i).getAmount();
-            }
+        bowS = sdb.getSound("bow");
+        fartS = sdb.getSound("fart");
+        mp5S = sdb.getSound("mp5");
+        sweepS = sdb.getSound("sweep");
+
+        if(bowS != null){
+            bowAmount = bowS.getAmount();
         }
-
-
+        if(fartS != null){
+            fartAmount = fartS.getAmount();
+        }
+        if(mp5S != null){
+            mp5Amount = mp5S.getAmount();
+        }
+        if(sweepS != null){
+            sweepAmount = sweepS.getAmount();
+        }
+        /*
         bowText.setText(bowAmount);
         fartText.setText(fartAmount);
         mp5Text.setText(mp5Amount);
         sweepText.setText(sweepAmount);
+        */
     }
 
 
