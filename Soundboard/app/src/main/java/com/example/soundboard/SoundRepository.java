@@ -1,0 +1,40 @@
+package com.example.soundboard;
+
+import android.arch.persistence.room.Room;
+import android.content.Context;
+
+import java.util.List;
+
+public class SoundRepository {
+    private String DB_NAME = "SoundDB";
+    private SoundDatabase sInstance;
+
+    public SoundRepository(Context context){
+            sInstance = Room.databaseBuilder(context, SoundDatabase.class, DB_NAME).build();
+    }
+
+    public void insertSound(String name, int amount){
+        Sound sound = new Sound();
+        sound.setName(name);
+        sound.setAmount(amount);
+        sInstance.soundDao().insertSound(sound);
+    }
+    public void updateSound(String name, int amount){
+        Sound sound = new Sound();
+        sound.setName(name);
+        sound.setAmount(amount);
+        sInstance.soundDao().updateSound(sound);
+    }
+    public void deleteSound(String name){
+        Sound sound = new Sound();
+        sound.setName(name);
+        sound.setAmount(0);
+        sInstance.soundDao().deleteSound(sound);
+    }
+    public Sound getSound(String name){
+        return sInstance.soundDao().loadSoundByName(name);
+    }
+    public List<Sound> getSounds(){
+        return sInstance.soundDao().getSoundList();
+    }
+}
