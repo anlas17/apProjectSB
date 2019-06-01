@@ -10,21 +10,20 @@
     <fragment
         android:id="@+id/fragment"
         android:name="com.example.soundboard.TopSectionFragment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="457dp"
+        android:layout_height="395dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.049"
         tools:layout="@layout/top_section_fragment" />
 
     <fragment
         android:id="@+id/fragment2"
         android:name="com.example.soundboard.BottomSectionFragment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="457dp"
+        android:layout_height="395dp"
         android:layout_marginTop="310dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
