@@ -8,6 +8,8 @@
     tools:context=".MainActivity">
 
 
+
+
     <Button
         android:id="@+id/button"
         android:layout_width="177dp"
@@ -78,42 +80,35 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textmp5"
         android:layout_width="177dp"
-        android:layout_height="59dp"
-        android:text="@android:string/ok"
-        android:textColor="#3F51B5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        android:layout_height="40dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/button3"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textfart"
         android:layout_width="177dp"
-        android:layout_height="59dp"
-        android:text="@android:string/ok"
-        android:textColor="#3F51B5"
+        android:layout_height="40dp"
+        android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/textbow"
         android:layout_width="177dp"
-        android:layout_height="59dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginRight="1dp"
-        android:text="@android:string/ok"
-        android:textColor="#3F51B5"
-        app:layout_constraintBottom_toTopOf="@+id/button4"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:layout_height="40dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/textsweep"
         android:layout_width="177dp"
-        android:layout_height="59dp"
-        android:text="@android:string/ok"
-        android:textColor="#3F51B5"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
-        app:layout_constraintStart_toStartOf="parent" />
-
+        android:layout_height="40dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/button4"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
