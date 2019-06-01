@@ -15,11 +15,19 @@ public class MainActivity extends AppCompatActivity {
     private MediaPlayer fart;
     private MediaPlayer mp5;
     private MediaPlayer sweep;
+    private MediaPlayer bell;
+    private MediaPlayer car;
+    private MediaPlayer gulls;
+    private MediaPlayer ufo;
 
     Integer bowAmount = new Integer(0);
     Integer sweepAmount = new Integer(0);
     Integer fartAmount = new Integer(0);
     Integer mp5Amount = new Integer(0);
+    Integer bellAmount = new Integer(0);
+    Integer carAmount = new Integer(0);
+    Integer gullsAmount = new Integer(0);
+    Integer ufoAmount = new Integer(0);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,11 +40,19 @@ public class MainActivity extends AppCompatActivity {
         TextView fartText = (TextView) findViewById(R.id.textfart);
         TextView mp5Text = (TextView) findViewById(R.id.textmp5);
         TextView sweepText = (TextView) findViewById(R.id.textsweep);
+        TextView bellText = (TextView) findViewById(R.id.textbell);
+        TextView carText = (TextView) findViewById(R.id.textcar);
+        TextView gullsText = (TextView) findViewById(R.id.textgulls);
+        TextView ufoText = (TextView) findViewById(R.id.textufo);
 
         bowText.setText(String.valueOf(bowAmount));
         fartText.setText(String.valueOf(fartAmount));
         mp5Text.setText(String.valueOf(mp5Amount));
         sweepText.setText(String.valueOf(sweepAmount));
+        bellText.setText(String.valueOf(bellAmount));
+        carText.setText(String.valueOf(carAmount));
+        gullsText.setText(String.valueOf(gullsAmount));
+        ufoText.setText(String.valueOf(ufoAmount));
 
 
     }
@@ -121,5 +137,89 @@ public class MainActivity extends AppCompatActivity {
             sweepText.setText(String.valueOf(sweepAmount));
             sdb.insertSound("sweep",0);
         }
+    }
+
+    public void bell(View view){
+        SoundRepository sdb = new SoundRepository(getApplicationContext());
+        TextView bellText = (TextView) findViewById(R.id.textbell);
+        bell = MediaPlayer.create(this, R.raw.bell);
+
+        bell.start();
+        Sound bellS;
+
+        try {
+            bellS = sdb.getSound("bell");
+            bellAmount = bellS.getAmount() + 1;
+            bellText.setText(String.valueOf(bellAmount));
+            bellS.setAmount(bellAmount);
+            sdb.updateSound(bellS.getName(), bellS.getAmount());
+        }catch(Exception e){
+            bellText.setText(String.valueOf(bellAmount));
+            sdb.insertSound("bell",0);
+        }
+
+    }
+
+    public void car(View view){
+        SoundRepository sdb = new SoundRepository(getApplicationContext());
+        TextView carText = (TextView) findViewById(R.id.textcar);
+        car = MediaPlayer.create(this, R.raw.car);
+
+        car.start();
+        Sound carS;
+
+        try {
+            carS = sdb.getSound("car");
+            carAmount = carS.getAmount() + 1;
+            carText.setText(String.valueOf(carAmount));
+            carS.setAmount(carAmount);
+            sdb.updateSound(carS.getName(), carS.getAmount());
+        }catch(Exception e){
+            carText.setText(String.valueOf(carAmount));
+            sdb.insertSound("car",0);
+        }
+
+    }
+
+    public void gulls(View view){
+        SoundRepository sdb = new SoundRepository(getApplicationContext());
+        TextView gullsText = (TextView) findViewById(R.id.textgulls);
+        gulls = MediaPlayer.create(this, R.raw.gulls);
+
+        gulls.start();
+        Sound gullsS;
+
+        try {
+            gullsS = sdb.getSound("gulls");
+            gullsAmount = gullsS.getAmount() + 1;
+            gullsText.setText(String.valueOf(gullsAmount));
+            gullsS.setAmount(gullsAmount);
+            sdb.updateSound(gullsS.getName(), gullsS.getAmount());
+        }catch(Exception e){
+            gullsText.setText(String.valueOf(gullsAmount));
+            sdb.insertSound("gulls",0);
+        }
+
+    }
+
+    public void ufo(View view){
+        SoundRepository sdb = new SoundRepository(getApplicationContext());
+        TextView ufoText = (TextView) findViewById(R.id.textufo);
+        ufo = MediaPlayer.create(this, R.raw.ufo);
+
+        ufo.start();
+        Sound ufoS;
+
+        try {
+            ufoS = sdb.getSound("ufo");
+            ufoAmount = ufoS.getAmount() + 1;
+            ufoText.setText(String.valueOf(ufoAmount));
+            ufoS.setAmount(ufoAmount);
+            sdb.updateSound(ufoS.getName(), ufoS.getAmount());
+        }catch(Exception e){
+            ufoText.setText(String.valueOf(ufoAmount));
+            sdb.insertSound("ufo",0);
+        }
+
     }
 }

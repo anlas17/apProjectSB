@@ -51,7 +51,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    // Mangler on click, android:onClick="testButton1"
 
     <Button
         android:id="@+id/testButton1"
@@ -67,7 +66,8 @@
         android:layout_marginRight="50dp"
         android:layout_marginBottom="50dp"
         android:background="#009688"
-        android:text="testButton1"
+        android:onClick="car"
+        android:text="Car"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
@@ -75,7 +75,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline3" />
 
-    // Mangler on click, android:onClick="testButton2"
 
     <Button
         android:id="@+id/testButton2"
@@ -91,7 +90,8 @@
         android:layout_marginRight="50dp"
         android:layout_marginBottom="50dp"
         android:background="#009688"
-        android:text="testButton2"
+        android:onClick="gulls"
+        android:text="Gulls"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -126,7 +126,7 @@
         app:layout_constraintTop_toBottomOf="@+id/button2" />
 
     <TextView
-        android:id="@+id/texttestbutton1"
+        android:id="@+id/textcar"
         android:layout_width="100dp"
         android:layout_height="30dp"
         android:layout_below="@+id/testButton1"
@@ -139,7 +139,7 @@
         app:layout_constraintTop_toBottomOf="@+id/testButton1" />
 
     <TextView
-        android:id="@+id/texttestbutton2"
+        android:id="@+id/textgulls"
         android:layout_width="100dp"
         android:layout_height="30dp"
         android:layout_below="@+id/testButton2"

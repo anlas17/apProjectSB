@@ -20,18 +20,21 @@ public class SoundRepository {
         sound.setAmount(amount);
         sInstance.soundDao().insertSound(sound);
     }
+
     public void updateSound(String name, Integer amount){
         Sound sound = new Sound("", 0);
         sound.setName(name);
         sound.setAmount(amount);
         sInstance.soundDao().updateSound(sound);
     }
+
     public void deleteSound(String name){
         Sound sound = new Sound("", 0);
         sound.setName(name);
         sound.setAmount(0);
         sInstance.soundDao().deleteSound(sound);
     }
+
     public Sound getSound(String name){
         return sInstance.soundDao().loadSoundByName(name);
     }

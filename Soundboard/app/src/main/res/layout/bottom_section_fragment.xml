@@ -20,7 +20,7 @@
         android:layout_marginBottom="50dp"
         android:background="#009688"
         android:onClick="mp5"
-        android:text="mp5"
+        android:text="MP5"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toTopOf="@+id/guideline7"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
@@ -49,7 +49,6 @@
         app:layout_constraintStart_toStartOf="@+id/guideline5"
         app:layout_constraintTop_toTopOf="parent" />
 
-    //Mangler on click, android:onClick="testButton3"
 
     <Button
         android:id="@+id/testButton3"
@@ -65,7 +64,8 @@
         android:layout_marginRight="50dp"
         android:layout_marginBottom="50dp"
         android:background="#009688"
-        android:text="testButton3"
+        android:onClick="bell"
+        android:text="Bell"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
@@ -73,7 +73,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline7" />
 
-    //Mangler on click, android:onClick="testButton4"
 
     <Button
         android:id="@+id/testButton4"
@@ -89,7 +88,8 @@
         android:layout_marginRight="50dp"
         android:layout_marginBottom="50dp"
         android:background="#009688"
-        android:text="testButton4"
+        android:onClick="ufo"
+        android:text="Ufo"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -125,7 +125,7 @@
         app:layout_constraintTop_toBottomOf="@+id/button4" />
 
     <TextView
-        android:id="@+id/texttestbutton3"
+        android:id="@+id/textbell"
         android:layout_width="100dp"
         android:layout_height="30dp"
         android:layout_below="@+id/testButton3"
@@ -138,7 +138,7 @@
         app:layout_constraintTop_toBottomOf="@+id/testButton3" />
 
     <TextView
-        android:id="@+id/texttestbutton4"
+        android:id="@+id/textufo"
         android:layout_width="100dp"
         android:layout_height="30dp"
         android:layout_below="@+id/testButton4"
