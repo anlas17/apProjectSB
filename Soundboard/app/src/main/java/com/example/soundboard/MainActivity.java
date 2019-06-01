@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 
 public class MainActivity extends AppCompatActivity {
-    
+
     private MediaPlayer bow;
     private MediaPlayer fart;
     private MediaPlayer mp5;
