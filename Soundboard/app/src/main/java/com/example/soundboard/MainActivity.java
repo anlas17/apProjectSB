@@ -1,11 +1,9 @@
 package com.example.soundboard;
 
 import android.media.MediaPlayer;
-import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 
@@ -36,6 +34,16 @@ public class MainActivity extends AppCompatActivity {
 
         SoundRepository sdb = new SoundRepository(getApplicationContext());
 
+        Sound bowS = sdb.getSound("bow");
+        Sound fartS = sdb.getSound("fart");
+        Sound mp5S = sdb.getSound("mp5");
+        Sound sweepS = sdb.getSound("sweep");
+        Sound bellS = sdb.getSound("bell");
+        Sound carS = sdb.getSound("car");
+        Sound gullsS = sdb.getSound("gulls");
+        Sound ufoS = sdb.getSound("ufo");
+
+
         TextView bowText = (TextView) findViewById(R.id.textbow);
         TextView fartText = (TextView) findViewById(R.id.textfart);
         TextView mp5Text = (TextView) findViewById(R.id.textmp5);
@@ -44,6 +52,15 @@ public class MainActivity extends AppCompatActivity {
         TextView carText = (TextView) findViewById(R.id.textcar);
         TextView gullsText = (TextView) findViewById(R.id.textgulls);
         TextView ufoText = (TextView) findViewById(R.id.textufo);
+
+        bowAmount = bowS.getAmount();
+        fartAmount = fartS.getAmount();
+        mp5Amount = mp5S.getAmount();
+        sweepAmount = sweepS.getAmount();
+        bellAmount = bellS.getAmount();
+        carAmount = carS.getAmount();
+        gullsAmount = gullsS.getAmount();
+        ufoAmount = ufoS.getAmount();
 
         bowText.setText(String.valueOf(bowAmount));
         fartText.setText(String.valueOf(fartAmount));
