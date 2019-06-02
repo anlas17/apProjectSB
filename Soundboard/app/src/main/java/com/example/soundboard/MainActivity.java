@@ -1,9 +1,13 @@
+//Anders Lassen - anlas17@student.sdu.dk
+//Mathias Madsen - mathm17@student.sdu.dk
 package com.example.soundboard;
 
 import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.BaseAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 
@@ -33,6 +37,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         SoundRepository sdb = new SoundRepository(getApplicationContext());
+
+        //Fills listView1 on UI with a list of sounds
+        /*
+        ListView listView = (ListView) findViewById(R.id.listView1);
+        BaseAdapter soundAdapter = new SoundAdapter(sdb.getSounds());
+        listView.setAdapter(soundAdapter);
+        */
 
         Sound bowS = sdb.getSound("bow");
         Sound fartS = sdb.getSound("fart");
@@ -89,6 +100,11 @@ public class MainActivity extends AppCompatActivity {
             bowText.setText(String.valueOf(bowAmount));
             bowS.setAmount(bowAmount);
             sdb.updateSound(bowS.getName(), bowS.getAmount());
+            /*
+             ListView listView = (ListView) findViewById(R.id.listView1);
+            BaseAdapter soundAdapter = new SoundAdapter(sdb.getSounds());
+            listView.setAdapter(soundAdapter);
+            */
         }catch(Exception e){
             bowText.setText(String.valueOf(bowAmount));
             sdb.insertSound("bow",0);
@@ -110,6 +126,11 @@ public class MainActivity extends AppCompatActivity {
             fartText.setText(String.valueOf(fartAmount));
             fartS.setAmount(fartAmount);
             sdb.updateSound(fartS.getName(), fartS.getAmount());
+            /*
+             ListView listView = (ListView) findViewById(R.id.listView1);
+            BaseAdapter soundAdapter = new SoundAdapter(sdb.getSounds());
+            listView.setAdapter(soundAdapter);
+            */
         }catch(Exception e){
             fartText.setText(String.valueOf(fartAmount));
             sdb.insertSound("fart",0);
@@ -130,6 +151,11 @@ public class MainActivity extends AppCompatActivity {
             mp5Text.setText(String.valueOf(mp5Amount));
             mp5S.setAmount(mp5Amount);
             sdb.updateSound(mp5S.getName(), mp5S.getAmount());
+            /*
+             ListView listView = (ListView) findViewById(R.id.listView1);
+            BaseAdapter soundAdapter = new SoundAdapter(sdb.getSounds());
+            listView.setAdapter(soundAdapter);
+            */
         }catch(Exception e){
             mp5Text.setText(String.valueOf(mp5Amount));
             sdb.insertSound("mp5",0);
@@ -150,6 +176,11 @@ public class MainActivity extends AppCompatActivity {
             sweepText.setText(String.valueOf(sweepAmount));
             sweepS.setAmount(sweepAmount);
             sdb.updateSound(sweepS.getName(), sweepS.getAmount());
+            /*
+             ListView listView = (ListView) findViewById(R.id.listView1);
+            BaseAdapter soundAdapter = new SoundAdapter(sdb.getSounds());
+            listView.setAdapter(soundAdapter);
+            */
         }catch(Exception e){
             sweepText.setText(String.valueOf(sweepAmount));
             sdb.insertSound("sweep",0);
@@ -170,6 +201,11 @@ public class MainActivity extends AppCompatActivity {
             bellText.setText(String.valueOf(bellAmount));
             bellS.setAmount(bellAmount);
             sdb.updateSound(bellS.getName(), bellS.getAmount());
+            /*
+             ListView listView = (ListView) findViewById(R.id.listView1);
+            BaseAdapter soundAdapter = new SoundAdapter(sdb.getSounds());
+            listView.setAdapter(soundAdapter);
+            */
         }catch(Exception e){
             bellText.setText(String.valueOf(bellAmount));
             sdb.insertSound("bell",0);
@@ -191,6 +227,11 @@ public class MainActivity extends AppCompatActivity {
             carText.setText(String.valueOf(carAmount));
             carS.setAmount(carAmount);
             sdb.updateSound(carS.getName(), carS.getAmount());
+            /*
+             ListView listView = (ListView) findViewById(R.id.listView1);
+            BaseAdapter soundAdapter = new SoundAdapter(sdb.getSounds());
+            listView.setAdapter(soundAdapter);
+            */
         }catch(Exception e){
             carText.setText(String.valueOf(carAmount));
             sdb.insertSound("car",0);
@@ -212,6 +253,11 @@ public class MainActivity extends AppCompatActivity {
             gullsText.setText(String.valueOf(gullsAmount));
             gullsS.setAmount(gullsAmount);
             sdb.updateSound(gullsS.getName(), gullsS.getAmount());
+            /*
+             ListView listView = (ListView) findViewById(R.id.listView1);
+            BaseAdapter soundAdapter = new SoundAdapter(sdb.getSounds());
+            listView.setAdapter(soundAdapter);
+            */
         }catch(Exception e){
             gullsText.setText(String.valueOf(gullsAmount));
             sdb.insertSound("gulls",0);
@@ -233,6 +279,11 @@ public class MainActivity extends AppCompatActivity {
             ufoText.setText(String.valueOf(ufoAmount));
             ufoS.setAmount(ufoAmount);
             sdb.updateSound(ufoS.getName(), ufoS.getAmount());
+            /*
+             ListView listView = (ListView) findViewById(R.id.listView1);
+            BaseAdapter soundAdapter = new SoundAdapter(sdb.getSounds());
+            listView.setAdapter(soundAdapter);
+            */
         }catch(Exception e){
             ufoText.setText(String.valueOf(ufoAmount));
             sdb.insertSound("ufo",0);
