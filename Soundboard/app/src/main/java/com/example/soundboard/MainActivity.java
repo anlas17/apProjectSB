@@ -138,8 +138,9 @@ public class MainActivity extends AppCompatActivity {
             listView.setAdapter(soundAdapter);
             */
         }catch(Exception e){
+            bowAmount++;
             bowText.setText(String.valueOf(bowAmount));
-            sdb.insertSound("bow",0);
+            sdb.insertSound("bow",1);
         }
 
     }
@@ -164,8 +165,9 @@ public class MainActivity extends AppCompatActivity {
             listView.setAdapter(soundAdapter);
             */
         }catch(Exception e){
+            fartAmount++;
             fartText.setText(String.valueOf(fartAmount));
-            sdb.insertSound("fart",0);
+            sdb.insertSound("fart",1);
         }
     }
     //start sound with button
@@ -189,8 +191,9 @@ public class MainActivity extends AppCompatActivity {
             listView.setAdapter(soundAdapter);
             */
         }catch(Exception e){
+            mp5Amount++;
             mp5Text.setText(String.valueOf(mp5Amount));
-            sdb.insertSound("mp5",0);
+            sdb.insertSound("mp5",1);
         }
     }
     //start sound with button
@@ -214,8 +217,9 @@ public class MainActivity extends AppCompatActivity {
             listView.setAdapter(soundAdapter);
             */
         }catch(Exception e){
+            sweepAmount++;
             sweepText.setText(String.valueOf(sweepAmount));
-            sdb.insertSound("sweep",0);
+            sdb.insertSound("sweep",1);
         }
     }
 
@@ -239,8 +243,9 @@ public class MainActivity extends AppCompatActivity {
             listView.setAdapter(soundAdapter);
             */
         }catch(Exception e){
+            bellAmount++;
             bellText.setText(String.valueOf(bellAmount));
-            sdb.insertSound("bell",0);
+            sdb.insertSound("bell",1);
         }
 
     }
@@ -265,8 +270,9 @@ public class MainActivity extends AppCompatActivity {
             listView.setAdapter(soundAdapter);
             */
         }catch(Exception e){
+            carAmount++;
             carText.setText(String.valueOf(carAmount));
-            sdb.insertSound("car",0);
+            sdb.insertSound("car",1);
         }
 
     }
@@ -291,8 +297,9 @@ public class MainActivity extends AppCompatActivity {
             listView.setAdapter(soundAdapter);
             */
         }catch(Exception e){
+            gullsAmount++;
             gullsText.setText(String.valueOf(gullsAmount));
-            sdb.insertSound("gulls",0);
+            sdb.insertSound("gulls",1);
         }
 
     }
@@ -317,8 +324,9 @@ public class MainActivity extends AppCompatActivity {
             listView.setAdapter(soundAdapter);
             */
         }catch(Exception e){
+            ufoAmount++;
             ufoText.setText(String.valueOf(ufoAmount));
-            sdb.insertSound("ufo",0);
+            sdb.insertSound("ufo",1);
         }
 
     }
