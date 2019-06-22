@@ -64,14 +64,46 @@ public class MainActivity extends AppCompatActivity {
         TextView gullsText = (TextView) findViewById(R.id.textgulls);
         TextView ufoText = (TextView) findViewById(R.id.textufo);
 
-        bowAmount = bowS.getAmount();
-        fartAmount = fartS.getAmount();
-        mp5Amount = mp5S.getAmount();
-        sweepAmount = sweepS.getAmount();
-        bellAmount = bellS.getAmount();
-        carAmount = carS.getAmount();
-        gullsAmount = gullsS.getAmount();
-        ufoAmount = ufoS.getAmount();
+        try{
+            bowAmount = bowS.getAmount();
+        }catch (Exception e){
+            bowAmount = 0;
+        }
+        try{
+            fartAmount = fartS.getAmount();
+        }catch (Exception e){
+            fartAmount = 0;
+        }
+        try{
+            mp5Amount = mp5S.getAmount();
+        }catch (Exception e){
+            mp5Amount = 0;
+        }
+        try{
+            sweepAmount = sweepS.getAmount();
+        }catch (Exception e){
+            sweepAmount = 0;
+        }
+        try{
+            bellAmount = bellS.getAmount();
+        }catch (Exception e){
+            bellAmount = 0;
+        }
+        try{
+            carAmount = carS.getAmount();
+        }catch (Exception e){
+            carAmount = 0;
+        }
+        try{
+            gullsAmount = gullsS.getAmount();
+        }catch (Exception e){
+            gullsAmount = 0;
+        }
+        try{
+            ufoAmount = ufoS.getAmount();
+        }catch (Exception e){
+            ufoAmount = 0;
+        }
 
         bowText.setText(String.valueOf(bowAmount));
         fartText.setText(String.valueOf(fartAmount));
